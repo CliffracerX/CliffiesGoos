@@ -104,6 +104,38 @@ public class CliffiesTaints
             Material.ground, "pATaint").setHardness(2F).setResistance(100F)
             .setStepSound(soundThunkFootstep)
             .setUnlocalizedName("pATaint").setCreativeTab(tab);
+    public final static Block rTaint1 = new Tier1Taint(2016,
+            Material.ground, "rTaint1").setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("rTaint1").setCreativeTab(tab);
+    public final static Block oTaint1 = new Tier1Taint(2017,
+            Material.ground, "oTaint1").setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("oTaint1").setCreativeTab(tab);
+    public final static Block yTaint1 = new Tier1Taint(2018,
+            Material.ground, "yTaint1").setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("yTaint1").setCreativeTab(tab);
+    public final static Block lTaint1 = new Tier1Taint(2019,
+            Material.ground, "lTaint1").setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("lTaint1").setCreativeTab(tab);
+    public final static Block gTaint1 = new Tier1Taint(2020,
+            Material.ground, "gTaint1").setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("gTaint1").setCreativeTab(tab);
+    public final static Block cTaint1 = new Tier1Taint(2021,
+            Material.ground, "cTaint1").setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("cTaint1").setCreativeTab(tab);
+    public final static Block bTaint1 = new Tier1Taint(2022,
+            Material.ground, "bTaint1").setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("bTaint1").setCreativeTab(tab);
+    public final static Block pTaint1 = new Tier1Taint(2023,
+            Material.ground, "pTaint1").setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("pTaint1").setCreativeTab(tab);
     
     @Instance("CliffiesTaints")
     public static CliffiesTaints instance;
@@ -168,6 +200,22 @@ public class CliffiesTaints
         GameRegistry.registerBlock(pTaint, "pTaint");
         LanguageRegistry.addName(pATaint, "Purple Anti-Taint wall");
         GameRegistry.registerBlock(pATaint, "pATaint");
+        LanguageRegistry.addName(rTaint1, "Red Tainted goo (lv 1)");
+        GameRegistry.registerBlock(rTaint1, "rTaint1");
+        LanguageRegistry.addName(oTaint1, "Orange Tainted goo (lv 1)");
+        GameRegistry.registerBlock(oTaint1, "oTaint1");
+        LanguageRegistry.addName(yTaint1, "Yellow Tainted goo (lv 1)");
+        GameRegistry.registerBlock(yTaint1, "yTaint1");
+        LanguageRegistry.addName(lTaint1, "Lime Tainted goo (lv 1)");
+        GameRegistry.registerBlock(lTaint1, "lTaint1");
+        LanguageRegistry.addName(gTaint1, "Green Tainted goo (lv 1)");
+        GameRegistry.registerBlock(gTaint1, "gTaint1");
+        LanguageRegistry.addName(cTaint1, "Cyan Tainted goo (lv 1)");
+        GameRegistry.registerBlock(cTaint1, "cTaint1");
+        LanguageRegistry.addName(bTaint1, "Blue Tainted goo (lv 1)");
+        GameRegistry.registerBlock(bTaint1, "bTaint1");
+        LanguageRegistry.addName(pTaint1, "Purple Tainted goo (lv 1)");
+        GameRegistry.registerBlock(pTaint1, "pTaint1");
         //Event handler
         MinecraftForge.EVENT_BUS.register(new TaintsEventHandler());
         //Turn on the world gen if it's enabled.
