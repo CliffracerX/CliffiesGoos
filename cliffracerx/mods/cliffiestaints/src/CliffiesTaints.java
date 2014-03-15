@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.block.material.Material;
+import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Loader;
@@ -38,6 +39,7 @@ public class CliffiesTaints
     public final static CreativeTabs tab = new TaintedTab("taintedTab");
     public final static StepSound soundSplutFootstep = new StepSound("cliffiestaints:splut", 1, 1);
     public final static StepSound soundThunkFootstep = new StepSound("cliffiestaints:thunk", 1, 1);
+    public boolean worldGenEnabled = false;
     public final static Block rTaint = new NormalTaint(2000,
             Material.ground, "rTaint").setHardness(0.25F)
             .setStepSound(soundSplutFootstep)
@@ -113,7 +115,14 @@ public class CliffiesTaints
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
+        //Openblocks donation station support.  Support the modders, without them needing to resort to adfly!  =D
         FMLInterModComms.sendMessage("CliffiesTaints", "donateUrl", "http://cliffracerx.github.io/CliffiesTaints/donate.html");
+        //Config.
+        Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+        config.load();
+        worldGenEnabled = config.get(Configuration.CATEGORY_GENERAL, "Generate_Goo", true).getBoolean(true);
+        // saving the configuration to its file
+        config.save();
     }
     
     @EventHandler
@@ -161,5 +170,25 @@ public class CliffiesTaints
         GameRegistry.registerBlock(pATaint, "pATaint");
         //Event handler
         MinecraftForge.EVENT_BUS.register(new TaintsEventHandler());
+        //Turn on the world gen if it's enabled.
+        if(worldGenEnabled)
+            GameRegistry.registerWorldGenerator(new GenerateGoo());
+        //Crafting
+        GameRegistry.addRecipe(new ItemStack(rATaint, 16), "###",
+                "#$#", "###", '$', Item.diamond, '#', rTaint);
+        GameRegistry.addRecipe(new ItemStack(oATaint, 16), "###",
+                "#$#", "###", '$', Item.diamond, '#', oTaint);
+        GameRegistry.addRecipe(new ItemStack(yATaint, 16), "###",
+                "#$#", "###", '$', Item.diamond, '#', yTaint);
+        GameRegistry.addRecipe(new ItemStack(lATaint, 16), "###",
+                "#$#", "###", '$', Item.diamond, '#', lTaint);
+        GameRegistry.addRecipe(new ItemStack(gATaint, 16), "###",
+                "#$#", "###", '$', Item.diamond, '#', gTaint);
+        GameRegistry.addRecipe(new ItemStack(cATaint, 16), "###",
+                "#$#", "###", '$', Item.diamond, '#', cTaint);
+        GameRegistry.addRecipe(new ItemStack(bATaint, 16), "###",
+                "#$#", "###", '$', Item.diamond, '#', bTaint);
+        GameRegistry.addRecipe(new ItemStack(pATaint, 16), "###",
+                "#$#", "###", '$', Item.diamond, '#', pTaint);
     }
 }
