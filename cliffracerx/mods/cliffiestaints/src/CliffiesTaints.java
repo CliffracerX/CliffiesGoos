@@ -40,6 +40,7 @@ public class CliffiesTaints
     public final static StepSound soundSplutFootstep = new StepSound("cliffiestaints:splut", 1, 1);
     public final static StepSound soundThunkFootstep = new StepSound("cliffiestaints:thunk", 1, 1);
     public boolean worldGenEnabled = false;
+    public boolean expensiveAntiTaint = false;
     public final static Block rTaint = new NormalTaint(2000,
             Material.ground, "rTaint").setHardness(0.25F)
             .setStepSound(soundSplutFootstep)
@@ -152,7 +153,8 @@ public class CliffiesTaints
         //Config.
         Configuration config = new Configuration(event.getSuggestedConfigurationFile());
         config.load();
-        worldGenEnabled = config.get(Configuration.CATEGORY_GENERAL, "Generate_Goo", true).getBoolean(true);
+        worldGenEnabled = config.get(Configuration.CATEGORY_GENERAL, "Generate Goo", true).getBoolean(true);
+        expensiveAntiTaint = config.get(Configuration.CATEGORY_GENERAL, "Expensive anti-taint", false).getBoolean(false);
         // saving the configuration to its file
         config.save();
     }
@@ -222,21 +224,59 @@ public class CliffiesTaints
         if(worldGenEnabled)
             GameRegistry.registerWorldGenerator(new GenerateGoo());
         //Crafting
-        GameRegistry.addRecipe(new ItemStack(rATaint, 16), "###",
-                "#$#", "###", '$', Item.diamond, '#', rTaint);
-        GameRegistry.addRecipe(new ItemStack(oATaint, 16), "###",
-                "#$#", "###", '$', Item.diamond, '#', oTaint);
-        GameRegistry.addRecipe(new ItemStack(yATaint, 16), "###",
-                "#$#", "###", '$', Item.diamond, '#', yTaint);
-        GameRegistry.addRecipe(new ItemStack(lATaint, 16), "###",
-                "#$#", "###", '$', Item.diamond, '#', lTaint);
-        GameRegistry.addRecipe(new ItemStack(gATaint, 16), "###",
-                "#$#", "###", '$', Item.diamond, '#', gTaint);
-        GameRegistry.addRecipe(new ItemStack(cATaint, 16), "###",
-                "#$#", "###", '$', Item.diamond, '#', cTaint);
-        GameRegistry.addRecipe(new ItemStack(bATaint, 16), "###",
-                "#$#", "###", '$', Item.diamond, '#', bTaint);
-        GameRegistry.addRecipe(new ItemStack(pATaint, 16), "###",
-                "#$#", "###", '$', Item.diamond, '#', pTaint);
+        if(expensiveAntiTaint)
+        {
+            GameRegistry.addRecipe(new ItemStack(rATaint, 16), "###",
+                    "#$#", "###", '$', Item.diamond, '#', rTaint);
+            GameRegistry.addRecipe(new ItemStack(oATaint, 16), "###",
+                    "#$#", "###", '$', Item.diamond, '#', oTaint);
+            GameRegistry.addRecipe(new ItemStack(yATaint, 16), "###",
+                    "#$#", "###", '$', Item.diamond, '#', yTaint);
+            GameRegistry.addRecipe(new ItemStack(lATaint, 16), "###",
+                    "#$#", "###", '$', Item.diamond, '#', lTaint);
+            GameRegistry.addRecipe(new ItemStack(gATaint, 16), "###",
+                    "#$#", "###", '$', Item.diamond, '#', gTaint);
+            GameRegistry.addRecipe(new ItemStack(cATaint, 16), "###",
+                    "#$#", "###", '$', Item.diamond, '#', cTaint);
+            GameRegistry.addRecipe(new ItemStack(bATaint, 16), "###",
+                    "#$#", "###", '$', Item.diamond, '#', bTaint);
+            GameRegistry.addRecipe(new ItemStack(pATaint, 16), "###",
+                    "#$#", "###", '$', Item.diamond, '#', pTaint);
+        }
+        else
+        {
+            GameRegistry.addRecipe(new ItemStack(rATaint, 16), "###",
+                    "#$#", "###", '$', Block.stone, '#', rTaint);
+            GameRegistry.addRecipe(new ItemStack(oATaint, 16), "###",
+                    "#$#", "###", '$', Block.stone, '#', oTaint);
+            GameRegistry.addRecipe(new ItemStack(yATaint, 16), "###",
+                    "#$#", "###", '$', Block.stone, '#', yTaint);
+            GameRegistry.addRecipe(new ItemStack(lATaint, 16), "###",
+                    "#$#", "###", '$', Block.stone, '#', lTaint);
+            GameRegistry.addRecipe(new ItemStack(gATaint, 16), "###",
+                    "#$#", "###", '$', Block.stone, '#', gTaint);
+            GameRegistry.addRecipe(new ItemStack(cATaint, 16), "###",
+                    "#$#", "###", '$', Block.stone, '#', cTaint);
+            GameRegistry.addRecipe(new ItemStack(bATaint, 16), "###",
+                    "#$#", "###", '$', Block.stone, '#', bTaint);
+            GameRegistry.addRecipe(new ItemStack(pATaint, 16), "###",
+                    "#$#", "###", '$', Block.stone, '#', pTaint);
+        }
+        GameRegistry.addRecipe(new ItemStack(rTaint1, 1), "###",
+                "#$#", "###", '$', rTaint, '#', rTaint);
+        GameRegistry.addRecipe(new ItemStack(oTaint1, 1), "###",
+                "#$#", "###", '$', oTaint, '#', oTaint);
+        GameRegistry.addRecipe(new ItemStack(yTaint1, 1), "###",
+                "#$#", "###", '$', yTaint, '#', yTaint);
+        GameRegistry.addRecipe(new ItemStack(lTaint1, 1), "###",
+                "#$#", "###", '$', lTaint, '#', lTaint);
+        GameRegistry.addRecipe(new ItemStack(gTaint1, 1), "###",
+                "#$#", "###", '$', gTaint, '#', gTaint);
+        GameRegistry.addRecipe(new ItemStack(cTaint1, 1), "###",
+                "#$#", "###", '$', cTaint, '#', cTaint);
+        GameRegistry.addRecipe(new ItemStack(bTaint1, 1), "###",
+                "#$#", "###", '$', bTaint, '#', bTaint);
+        GameRegistry.addRecipe(new ItemStack(pTaint1, 1), "###",
+                "#$#", "###", '$', pTaint, '#', pTaint);
     }
 }
