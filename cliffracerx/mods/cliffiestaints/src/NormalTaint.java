@@ -43,7 +43,7 @@ public class NormalTaint extends Block
                     int k1 = par4 + par5Random.nextInt(3) - 1;
 
                     //Check and see if there are any non-air, non-taint-preventing and non-bedrock blocks nearby, and if so spread onto them.
-                    if (par1World.getBlockId(i1, j1, k1) != 0 && par1World.getBlockId(i1, j1, k1) != Block.bedrock.blockID && !(Block.blocksList[par1World.getBlockId(i1, j1, k1)] instanceof NormalBlock))
+                    if (par1World.getBlockId(i1, j1, k1) != 0 && par1World.getBlockId(i1, j1, k1) != Block.bedrock.blockID && !(Block.blocksList[par1World.getBlockId(i1, j1, k1)] instanceof NormalBlock) && !(Block.blocksList[par1World.getBlockId(i1, j1, k1)] instanceof Tier2Taint))
                     {
                         //System.out.println("Cliffie's Taints: Taint taking over on x: "+i1+" y: "+j1+" z: "+k1);
                         par1World.setBlock(i1, j1, k1, this.blockID);

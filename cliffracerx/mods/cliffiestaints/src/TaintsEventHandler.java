@@ -60,6 +60,9 @@ public class TaintsEventHandler
         {
             event.manager.soundPoolSounds.addSound("cliffiestaints:splut" + i + ".ogg");
             event.manager.soundPoolSounds.addSound("cliffiestaints:thunk" + i + ".ogg");
+            event.manager.soundPoolSounds.addSound("cliffiestaints:woosh" + i + ".ogg");
+            event.manager.soundPoolSounds.addSound("cliffiestaints:zap" + i + ".ogg");
+            event.manager.soundPoolSounds.addSound("cliffiestaints:splurg" + i + ".ogg");
         }
     }
 }

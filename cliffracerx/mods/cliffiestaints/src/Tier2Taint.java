@@ -5,12 +5,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class Tier1Taint extends Block
+public class Tier2Taint extends Block
 {
     /**
      * Private texture file.
@@ -18,19 +20,49 @@ public class Tier1Taint extends Block
     private String tex;
     
     /**
-     * A still fairly basic taint block.
-     * Designed to annoy you and possibly kill you, this spreads onto nearby blocks AND poisions you sometimes.
-     * This is a Lv. 1 / dangerous taint.
+     * A gaseous taint block, rather bad to have.
+     * This WILL kill you.  Spreads through air, and only has a small chance to be removed when it spreads.
+     * This is a Lv. 2 / quite bad taint.
      * @param id
      * @param material
      * @param texture
      */
-    public Tier1Taint(int id, Material material, String texture)
+    public Tier2Taint(int id, Material material, String texture)
     {
         super(id, material);
         this.tex = texture;
         this.setTickRandomly(true);
         setTextureName("CliffiesTaints:" + texture);
+    }
+    
+    public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return 0;
+    }
+    
+    public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
+    {
+        int i1 = par1IBlockAccess.getBlockId(par2, par3, par4);
+        return i1 == this.blockID ? false : super.shouldSideBeRendered(par1IBlockAccess, par2, par3, par4, par5);
+    }
+    
+    public AxisAlignedBB getSelectedBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
+    {
+        return AxisAlignedBB.getAABBPool().getAABB((double)par2 + 0, (double)par3 + 0, (double)par4 + 0, (double)par2 + 0, (double)par3 + 0, (double)par4 + 0);
+    }
+    
+    /**
+     * Is this block (a) opaque and (b) a full 1m cube?  This determines whether or not to render the shared face of two
+     * adjacent blocks and also whether the player can attach torches, redstone wire, etc to this block.
+     */
+    public boolean isOpaqueCube()
+    {
+        return false;
+    }
+    
+    public int getRenderBlockPass()
+    {
+        return 1;
     }
     
     /**
@@ -47,11 +79,13 @@ public class Tier1Taint extends Block
                     int j1 = par3 + par5Random.nextInt(5) - 3;
                     int k1 = par4 + par5Random.nextInt(3) - 1;
 
-                    //Check and see if there are any non-air, non-taint-preventing and non-bedrock blocks nearby, and if so spread onto them.
-                    if (par1World.getBlockId(i1, j1, k1) != 0 && par1World.getBlockId(i1, j1, k1) != Block.bedrock.blockID && !(Block.blocksList[par1World.getBlockId(i1, j1, k1)] instanceof NormalBlock) && !(Block.blocksList[par1World.getBlockId(i1, j1, k1)] instanceof Tier2Taint))
+                    //Spread through the air only.
+                    if (par1World.getBlockId(i1, j1, k1) == 0)
                     {
                         //System.out.println("Cliffie's Taints: Taint taking over on x: "+i1+" y: "+j1+" z: "+k1);
                         par1World.setBlock(i1, j1, k1, this.blockID);
+                        if(par5Random.nextInt(5)==0)
+                            par1World.setBlock(par2, par3, par4, 0);
                     }
                 }
             }
@@ -64,8 +98,7 @@ public class Tier1Taint extends Block
      */
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
     {
-        float f = 0.125F;
-        return AxisAlignedBB.getAABBPool().getAABB((double)par2, (double)par3, (double)par4, (double)(par2 + 1), (double)((float)(par3 + 1) - f), (double)(par4 + 1));
+        return null;
     }
     
     /**
@@ -76,8 +109,12 @@ public class Tier1Taint extends Block
         if(par5Entity instanceof EntityLivingBase && par5Entity.worldObj.isRemote==false)
         {
             EntityLivingBase living = (EntityLivingBase)par5Entity;
+            par5Entity.motionX*=0.5F;
+            par5Entity.motionY*=0.5F;
+            par5Entity.motionZ*=0.5F;
+            living.addPotionEffect(new PotionEffect(Potion.blindness.id, 10, 0, true));
             if(par1World.rand.nextInt(100)==0)
-            living.addPotionEffect(new PotionEffect(Potion.poison.id, 480, 0, true));
+            living.addPotionEffect(new PotionEffect(Potion.poison.id, 60, 0, true));
         }
     }
 }

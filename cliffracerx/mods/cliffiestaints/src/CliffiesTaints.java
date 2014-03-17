@@ -39,6 +39,9 @@ public class CliffiesTaints
     public final static CreativeTabs tab = new TaintedTab("taintedTab");
     public final static StepSound soundSplutFootstep = new StepSound("cliffiestaints:splut", 1, 1);
     public final static StepSound soundThunkFootstep = new StepSound("cliffiestaints:thunk", 1, 1);
+    public final static StepSound soundWooshFootstep = new StepSound("cliffiestaints:woosh", 1, 1);
+    public final static StepSound soundZapFootstep = new StepSound("cliffiestaints:zap", 1, 1);
+    public final static StepSound soundSplurgFootstep = new StepSound("cliffiestaints:splurg", 1, 1);
     public boolean worldGenEnabled = false;
     public boolean expensiveAntiTaint = false;
     public final static Block rTaint = new NormalTaint(2000,
@@ -137,6 +140,135 @@ public class CliffiesTaints
             Material.ground, "pTaint1").setHardness(0.75F)
             .setStepSound(soundSplutFootstep)
             .setUnlocalizedName("pTaint1").setCreativeTab(tab);
+    public final static Block rTaint2 = new Tier2Taint(2024,
+            Material.vine, "rTaint2").setHardness(0.1F)
+            .setStepSound(soundWooshFootstep)
+            .setUnlocalizedName("rTaint2").setCreativeTab(tab);
+    public final static Block oTaint2 = new Tier2Taint(2025,
+            Material.vine, "oTaint2").setHardness(0.1F)
+            .setStepSound(soundWooshFootstep)
+            .setUnlocalizedName("oTaint2").setCreativeTab(tab);
+    public final static Block yTaint2 = new Tier2Taint(2026,
+            Material.vine, "yTaint2").setHardness(0.1F)
+            .setStepSound(soundWooshFootstep)
+            .setUnlocalizedName("yTaint2").setCreativeTab(tab);
+    public final static Block lTaint2 = new Tier2Taint(2027,
+            Material.vine, "lTaint2").setHardness(0.1F)
+            .setStepSound(soundWooshFootstep)
+            .setUnlocalizedName("lTaint2").setCreativeTab(tab);
+    public final static Block gTaint2 = new Tier2Taint(2028,
+            Material.vine, "gTaint2").setHardness(0.1F)
+            .setStepSound(soundWooshFootstep)
+            .setUnlocalizedName("gTaint2").setCreativeTab(tab);
+    public final static Block cTaint2 = new Tier2Taint(2029,
+            Material.vine, "cTaint2").setHardness(0.1F)
+            .setStepSound(soundWooshFootstep)
+            .setUnlocalizedName("cTaint2").setCreativeTab(tab);
+    public final static Block bTaint2 = new Tier2Taint(2030,
+            Material.vine, "bTaint2").setHardness(0.1F)
+            .setStepSound(soundWooshFootstep)
+            .setUnlocalizedName("bTaint2").setCreativeTab(tab);
+    public final static Block pTaint2 = new Tier2Taint(2031,
+            Material.vine, "pTaint2").setHardness(0.1F)
+            .setStepSound(soundWooshFootstep)
+            .setUnlocalizedName("pTaint2").setCreativeTab(tab);
+    public final static Block rFField = new AntiTaintTransp(2032,
+            Material.rock, "rFField").setHardness(10F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("rFField").setCreativeTab(tab).setResistance(500F);
+    public final static Block oFField = new AntiTaintTransp(2033,
+            Material.rock, "oFField").setHardness(10F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("oFField").setCreativeTab(tab).setResistance(500F);
+    public final static Block yFField = new AntiTaintTransp(2034,
+            Material.rock, "yFField").setHardness(10F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("yFField").setCreativeTab(tab).setResistance(500F);
+    public final static Block lFField = new AntiTaintTransp(2035,
+            Material.rock, "lFField").setHardness(10F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("lFField").setCreativeTab(tab).setResistance(500F);
+    public final static Block gFField = new AntiTaintTransp(2036,
+            Material.rock, "gFField").setHardness(10F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("gFField").setCreativeTab(tab).setResistance(500F);
+    public final static Block cFField = new AntiTaintTransp(2037,
+            Material.rock, "cFField").setHardness(10F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("cFField").setCreativeTab(tab).setResistance(500F);
+    public final static Block bFField = new AntiTaintTransp(2038,
+            Material.rock, "bFField").setHardness(10F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("bFField").setCreativeTab(tab).setResistance(500F);
+    public final static Block pFField = new AntiTaintTransp(2039,
+            Material.rock, "pFField").setHardness(10F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("pFField").setCreativeTab(tab).setResistance(500F);
+    public final static Block rFFieldAL = new AirlockType(2040,
+            Material.rock, "rFFieldAL").setHardness(0F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("rFFieldAL").setCreativeTab(tab).setResistance(500F);
+    public final static Block oFFieldAL = new AirlockType(2041,
+            Material.rock, "oFFieldAL").setHardness(0F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("oFFieldAL").setCreativeTab(tab).setResistance(500F);
+    public final static Block yFFieldAL = new AirlockType(2042,
+            Material.rock, "yFFieldAL").setHardness(0F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("yFFieldAL").setCreativeTab(tab).setResistance(500F);
+    public final static Block lFFieldAL = new AirlockType(2043,
+            Material.rock, "lFFieldAL").setHardness(0F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("lFFieldAL").setCreativeTab(tab).setResistance(500F);
+    public final static Block gFFieldAL = new AirlockType(2044,
+            Material.rock, "gFFieldAL").setHardness(0F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("gFFieldAL").setCreativeTab(tab).setResistance(500F);
+    public final static Block cFFieldAL = new AirlockType(2045,
+            Material.rock, "cFFieldAL").setHardness(0F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("cFFieldAL").setCreativeTab(tab).setResistance(500F);
+    public final static Block bFFieldAL = new AirlockType(2046,
+            Material.rock, "bFFieldAL").setHardness(0F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("bFFieldAL").setCreativeTab(tab).setResistance(500F);
+    public final static Block pFFieldAL = new AirlockType(2047,
+            Material.rock, "pFFieldAL").setHardness(0F)
+            .setStepSound(soundZapFootstep)
+            .setUnlocalizedName("pFFieldAL").setCreativeTab(tab).setResistance(500F);
+    public final static Block rTaint3 = new Tier3Taint(2048,
+            Material.vine, "rTaint3").setHardness(0.1F)
+            .setStepSound(soundSplurgFootstep)
+            .setUnlocalizedName("rTaint3").setCreativeTab(tab);
+    public final static Block oTaint3 = new Tier3Taint(2049,
+            Material.vine, "oTaint3").setHardness(0.1F)
+            .setStepSound(soundSplurgFootstep)
+            .setUnlocalizedName("oTaint3").setCreativeTab(tab);
+    public final static Block yTaint3 = new Tier3Taint(2050,
+            Material.vine, "yTaint3").setHardness(0.1F)
+            .setStepSound(soundSplurgFootstep)
+            .setUnlocalizedName("yTaint3").setCreativeTab(tab);
+    public final static Block lTaint3 = new Tier3Taint(2051,
+            Material.vine, "lTaint3").setHardness(0.1F)
+            .setStepSound(soundSplurgFootstep)
+            .setUnlocalizedName("lTaint3").setCreativeTab(tab);
+    public final static Block gTaint3 = new Tier3Taint(2052,
+            Material.vine, "gTaint3").setHardness(0.1F)
+            .setStepSound(soundSplurgFootstep)
+            .setUnlocalizedName("gTaint3").setCreativeTab(tab);
+    public final static Block cTaint3 = new Tier3Taint(2053,
+            Material.vine, "cTaint3").setHardness(0.1F)
+            .setStepSound(soundSplurgFootstep)
+            .setUnlocalizedName("cTaint3").setCreativeTab(tab);
+    public final static Block bTaint3 = new Tier3Taint(2054,
+            Material.vine, "bTaint3").setHardness(0.1F)
+            .setStepSound(soundSplurgFootstep)
+            .setUnlocalizedName("bTaint3").setCreativeTab(tab);
+    public final static Block pTaint3 = new Tier3Taint(2055,
+            Material.vine, "pTaint3").setHardness(0.1F)
+            .setStepSound(soundSplurgFootstep)
+            .setUnlocalizedName("pTaint3").setCreativeTab(tab);
+    
     
     @Instance("CliffiesTaints")
     public static CliffiesTaints instance;
@@ -218,6 +350,70 @@ public class CliffiesTaints
         GameRegistry.registerBlock(bTaint1, "bTaint1");
         LanguageRegistry.addName(pTaint1, "Purple Tainted goo (lv 1)");
         GameRegistry.registerBlock(pTaint1, "pTaint1");
+        LanguageRegistry.addName(rTaint2, "Red Tainted gas (lv 2)");
+        GameRegistry.registerBlock(rTaint2, "rTaint2");
+        LanguageRegistry.addName(oTaint2, "Orange Tainted gas (lv 2)");
+        GameRegistry.registerBlock(oTaint2, "oTaint2");
+        LanguageRegistry.addName(yTaint2, "Yellow Tainted gas (lv 2)");
+        GameRegistry.registerBlock(yTaint2, "yTaint2");
+        LanguageRegistry.addName(lTaint2, "Lime Tainted gas (lv 2)");
+        GameRegistry.registerBlock(lTaint2, "lTaint2");
+        LanguageRegistry.addName(gTaint2, "Green Tainted gas (lv 2)");
+        GameRegistry.registerBlock(gTaint2, "gTaint2");
+        LanguageRegistry.addName(cTaint2, "Cyan Tainted gas (lv 2)");
+        GameRegistry.registerBlock(cTaint2, "cTaint2");
+        LanguageRegistry.addName(bTaint2, "Blue Tainted gas (lv 2)");
+        GameRegistry.registerBlock(bTaint2, "bTaint2");
+        LanguageRegistry.addName(pTaint2, "Purple Tainted gas (lv 2)");
+        GameRegistry.registerBlock(pTaint2, "pTaint2");
+        LanguageRegistry.addName(rFField, "Red Force Field");
+        GameRegistry.registerBlock(rFField, "rFField");
+        LanguageRegistry.addName(oFField, "Orange Force Field");
+        GameRegistry.registerBlock(oFField, "oFField");
+        LanguageRegistry.addName(yFField, "Yellow Force Field");
+        GameRegistry.registerBlock(yFField, "yFField");
+        LanguageRegistry.addName(lFField, "Lime Force Field");
+        GameRegistry.registerBlock(lFField, "lFField");
+        LanguageRegistry.addName(gFField, "Green Force Field");
+        GameRegistry.registerBlock(gFField, "gFField");
+        LanguageRegistry.addName(cFField, "Cyan Force Field");
+        GameRegistry.registerBlock(cFField, "cFField");
+        LanguageRegistry.addName(bFField, "Blue Force Field");
+        GameRegistry.registerBlock(bFField, "bFField");
+        LanguageRegistry.addName(pFField, "Purple Force Field");
+        GameRegistry.registerBlock(pFField, "pFField");
+        LanguageRegistry.addName(rFFieldAL, "Red Air Lock");
+        GameRegistry.registerBlock(rFFieldAL, "rFFieldAL");
+        LanguageRegistry.addName(oFFieldAL, "Orange Air Lock");
+        GameRegistry.registerBlock(oFFieldAL, "oFFieldAL");
+        LanguageRegistry.addName(yFFieldAL, "Yellow Air Lock");
+        GameRegistry.registerBlock(yFFieldAL, "yFFieldAL");
+        LanguageRegistry.addName(lFFieldAL, "Lime Air Lock");
+        GameRegistry.registerBlock(lFFieldAL, "lFFieldAL");
+        LanguageRegistry.addName(gFFieldAL, "Green Air Lock");
+        GameRegistry.registerBlock(gFFieldAL, "gFFieldAL");
+        LanguageRegistry.addName(cFFieldAL, "Cyan Air Lock");
+        GameRegistry.registerBlock(cFFieldAL, "cFFieldAL");
+        LanguageRegistry.addName(bFFieldAL, "Blue Air Lock");
+        GameRegistry.registerBlock(bFFieldAL, "bFFieldAL");
+        LanguageRegistry.addName(pFFieldAL, "Purple Air Lock");
+        GameRegistry.registerBlock(pFFieldAL, "pFFieldAL");
+        LanguageRegistry.addName(rTaint3, "Red Tainted goo (lv 3)");
+        GameRegistry.registerBlock(rTaint3, "rTaint3");
+        LanguageRegistry.addName(oTaint3, "Orange Tainted goo (lv 3)");
+        GameRegistry.registerBlock(oTaint3, "oTaint3");
+        LanguageRegistry.addName(yTaint3, "Yellow Tainted goo (lv 3)");
+        GameRegistry.registerBlock(yTaint3, "yTaint3");
+        LanguageRegistry.addName(lTaint3, "Lime Tainted goo (lv 3)");
+        GameRegistry.registerBlock(lTaint3, "lTaint3");
+        LanguageRegistry.addName(gTaint3, "Green Tainted goo (lv 3)");
+        GameRegistry.registerBlock(gTaint3, "gTaint3");
+        LanguageRegistry.addName(cTaint3, "Cyan Tainted goo (lv 3)");
+        GameRegistry.registerBlock(cTaint3, "cTaint3");
+        LanguageRegistry.addName(bTaint3, "Blue Tainted goo (lv 3)");
+        GameRegistry.registerBlock(bTaint3, "bTaint3");
+        LanguageRegistry.addName(pTaint3, "Purple Tainted goo (lv 3)");
+        GameRegistry.registerBlock(pTaint3, "pTaint3");
         //Event handler
         MinecraftForge.EVENT_BUS.register(new TaintsEventHandler());
         //Turn on the world gen if it's enabled.
@@ -262,6 +458,7 @@ public class CliffiesTaints
             GameRegistry.addRecipe(new ItemStack(pATaint, 16), "###",
                     "#$#", "###", '$', Block.stone, '#', pTaint);
         }
+        
         GameRegistry.addRecipe(new ItemStack(rTaint1, 1), "###",
                 "#$#", "###", '$', rTaint, '#', rTaint);
         GameRegistry.addRecipe(new ItemStack(oTaint1, 1), "###",
@@ -278,5 +475,69 @@ public class CliffiesTaints
                 "#$#", "###", '$', bTaint, '#', bTaint);
         GameRegistry.addRecipe(new ItemStack(pTaint1, 1), "###",
                 "#$#", "###", '$', pTaint, '#', pTaint);
+        GameRegistry.addRecipe(new ItemStack(rTaint2, 1), "###",
+                "#$#", "###", '$', rTaint, '#', rTaint1);
+        GameRegistry.addRecipe(new ItemStack(oTaint2, 1), "###",
+                "#$#", "###", '$', oTaint, '#', oTaint1);
+        GameRegistry.addRecipe(new ItemStack(yTaint2, 1), "###",
+                "#$#", "###", '$', yTaint, '#', yTaint1);
+        GameRegistry.addRecipe(new ItemStack(lTaint2, 1), "###",
+                "#$#", "###", '$', lTaint, '#', lTaint1);
+        GameRegistry.addRecipe(new ItemStack(gTaint2, 1), "###",
+                "#$#", "###", '$', gTaint, '#', gTaint1);
+        GameRegistry.addRecipe(new ItemStack(cTaint2, 1), "###",
+                "#$#", "###", '$', cTaint, '#', cTaint1);
+        GameRegistry.addRecipe(new ItemStack(bTaint2, 1), "###",
+                "#$#", "###", '$', bTaint, '#', bTaint1);
+        GameRegistry.addRecipe(new ItemStack(pTaint2, 1), "###",
+                "#$#", "###", '$', pTaint, '#', pTaint1);
+        GameRegistry.addRecipe(new ItemStack(rFField, 4), "###",
+                "#$#", "###", '$', rTaint2, '#', rATaint);
+        GameRegistry.addRecipe(new ItemStack(oFField, 4), "###",
+                "#$#", "###", '$', oTaint2, '#', oATaint);
+        GameRegistry.addRecipe(new ItemStack(yFField, 4), "###",
+                "#$#", "###", '$', yTaint2, '#', yATaint);
+        GameRegistry.addRecipe(new ItemStack(lFField, 4), "###",
+                "#$#", "###", '$', lTaint2, '#', lATaint);
+        GameRegistry.addRecipe(new ItemStack(gFField, 4), "###",
+                "#$#", "###", '$', gTaint2, '#', gATaint);
+        GameRegistry.addRecipe(new ItemStack(cFField, 4), "###",
+                "#$#", "###", '$', cTaint2, '#', cATaint);
+        GameRegistry.addRecipe(new ItemStack(bFField, 4), "###",
+                "#$#", "###", '$', bTaint2, '#', bATaint);
+        GameRegistry.addRecipe(new ItemStack(pFField, 4), "###",
+                "#$#", "###", '$', pTaint2, '#', pATaint);
+        GameRegistry.addRecipe(new ItemStack(rFFieldAL, 4), "###",
+                "#$#", "###", '$', rTaint2, '#', rFField);
+        GameRegistry.addRecipe(new ItemStack(oFFieldAL, 4), "###",
+                "#$#", "###", '$', oTaint2, '#', oFField);
+        GameRegistry.addRecipe(new ItemStack(yFFieldAL, 4), "###",
+                "#$#", "###", '$', yTaint2, '#', yFField);
+        GameRegistry.addRecipe(new ItemStack(lFFieldAL, 4), "###",
+                "#$#", "###", '$', lTaint2, '#', lFField);
+        GameRegistry.addRecipe(new ItemStack(gFFieldAL, 4), "###",
+                "#$#", "###", '$', gTaint2, '#', gFField);
+        GameRegistry.addRecipe(new ItemStack(cFFieldAL, 4), "###",
+                "#$#", "###", '$', cTaint2, '#', cFField);
+        GameRegistry.addRecipe(new ItemStack(bFFieldAL, 4), "###",
+                "#$#", "###", '$', bTaint2, '#', bFField);
+        GameRegistry.addRecipe(new ItemStack(pFFieldAL, 4), "###",
+                "#$#", "###", '$', pTaint2, '#', pFField);
+        GameRegistry.addRecipe(new ItemStack(rTaint3, 1), "###",
+                "#$#", "###", '$', rTaint1, '#', rTaint2);
+        GameRegistry.addRecipe(new ItemStack(oTaint3, 1), "###",
+                "#$#", "###", '$', oTaint1, '#', oTaint2);
+        GameRegistry.addRecipe(new ItemStack(yTaint3, 1), "###",
+                "#$#", "###", '$', yTaint1, '#', yTaint2);
+        GameRegistry.addRecipe(new ItemStack(lTaint3, 1), "###",
+                "#$#", "###", '$', lTaint1, '#', lTaint2);
+        GameRegistry.addRecipe(new ItemStack(gTaint3, 1), "###",
+                "#$#", "###", '$', gTaint1, '#', gTaint2);
+        GameRegistry.addRecipe(new ItemStack(cTaint3, 1), "###",
+                "#$#", "###", '$', cTaint1, '#', cTaint2);
+        GameRegistry.addRecipe(new ItemStack(bTaint3, 1), "###",
+                "#$#", "###", '$', bTaint1, '#', bTaint2);
+        GameRegistry.addRecipe(new ItemStack(pTaint3, 1), "###",
+                "#$#", "###", '$', pTaint1, '#', pTaint2);
     }
 }
