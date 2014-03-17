@@ -12,7 +12,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class Tier3Taint extends Block
+public class Tier3Taint extends Tier2Taint
 {
     /**
      * Private texture file.
@@ -29,7 +29,7 @@ public class Tier3Taint extends Block
      */
     public Tier3Taint(int id, Material material, String texture)
     {
-        super(id, material);
+        super(id, material, texture);
         this.tex = texture;
         this.setTickRandomly(true);
         setTextureName("CliffiesTaints:" + texture);
@@ -75,11 +75,11 @@ public class Tier3Taint extends Block
             {
                 for (int l = 0; l < 4; ++l)
                 {
-                    int i1 = par2 + par5Random.nextInt(3) - 1;
-                    int j1 = par3 + par5Random.nextInt(5) - 3;
-                    int k1 = par4 + par5Random.nextInt(3) - 1;
+                    int i1 = par2 + par5Random.nextInt(1) - 1;
+                    int j1 = par3 + par5Random.nextInt(1) - 1;
+                    int k1 = par4 + par5Random.nextInt(1) - 1;
 
-                    //Spread onto all blocks that aren't bedrock, force fields, or gas-type (tier 2) taint.
+                    //Spread onto all blocks that aren't bedrock, or force fields/airlocks.
                     if (par1World.getBlockId(i1, j1, k1) != Block.bedrock.blockID && !((Block.blocksList[par1World.getBlockId(i1, j1, k1)] instanceof AntiTaintTransp) || (Block.blocksList[par1World.getBlockId(i1, j1, k1)] instanceof AirlockType)))
                     {
                         //System.out.println("Cliffie's Taints: Taint taking over on x: "+i1+" y: "+j1+" z: "+k1);
@@ -113,7 +113,7 @@ public class Tier3Taint extends Block
             par5Entity.motionY*=0.25F;
             par5Entity.motionZ*=0.25F;
             par5Entity.fallDistance=0;
-            living.addPotionEffect(new PotionEffect(Potion.blindness.id, 10, 0, true));
+            living.addPotionEffect(new PotionEffect(Potion.blindness.id, 60, 2, true));
             if(par1World.rand.nextInt(100)==0)
             living.addPotionEffect(new PotionEffect(Potion.poison.id, 60, 0, true));
         }

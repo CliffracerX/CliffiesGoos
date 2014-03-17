@@ -1,7 +1,14 @@
 package cliffracerx.mods.cliffiestaints.src;
 
+import java.util.Random;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -22,14 +29,20 @@ public class AirlockType extends NormalBlock
         return false;
     }
     
+    public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World,
+            int par2, int par3, int par4)
+    {
+        return null;
+    }
+    
+    @SideOnly(Side.CLIENT)
     public int getRenderBlockPass()
     {
         return 1;
     }
     
-    public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
+    public boolean renderAsNormalBlock()
     {
-        int i1 = par1IBlockAccess.getBlockId(par2, par3, par4);
-        return i1 == this.blockID ? false : super.shouldSideBeRendered(par1IBlockAccess, par2, par3, par4, par5);
+        return false;
     }
 }

@@ -44,6 +44,7 @@ public class CliffiesTaints
     public final static StepSound soundSplurgFootstep = new StepSound("cliffiestaints:splurg", 1, 1);
     public boolean worldGenEnabled = false;
     public boolean expensiveAntiTaint = false;
+    public boolean dangerousTaintCrafting = false;
     public final static Block rTaint = new NormalTaint(2000,
             Material.ground, "rTaint").setHardness(0.25F)
             .setStepSound(soundSplutFootstep)
@@ -205,35 +206,35 @@ public class CliffiesTaints
             .setStepSound(soundZapFootstep)
             .setUnlocalizedName("pFField").setCreativeTab(tab).setResistance(500F);
     public final static Block rFFieldAL = new AirlockType(2040,
-            Material.rock, "rFFieldAL").setHardness(0F)
+            Material.rock, "rFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
             .setUnlocalizedName("rFFieldAL").setCreativeTab(tab).setResistance(500F);
     public final static Block oFFieldAL = new AirlockType(2041,
-            Material.rock, "oFFieldAL").setHardness(0F)
+            Material.rock, "oFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
             .setUnlocalizedName("oFFieldAL").setCreativeTab(tab).setResistance(500F);
     public final static Block yFFieldAL = new AirlockType(2042,
-            Material.rock, "yFFieldAL").setHardness(0F)
+            Material.rock, "yFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
             .setUnlocalizedName("yFFieldAL").setCreativeTab(tab).setResistance(500F);
     public final static Block lFFieldAL = new AirlockType(2043,
-            Material.rock, "lFFieldAL").setHardness(0F)
+            Material.rock, "lFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
             .setUnlocalizedName("lFFieldAL").setCreativeTab(tab).setResistance(500F);
     public final static Block gFFieldAL = new AirlockType(2044,
-            Material.rock, "gFFieldAL").setHardness(0F)
+            Material.rock, "gFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
             .setUnlocalizedName("gFFieldAL").setCreativeTab(tab).setResistance(500F);
     public final static Block cFFieldAL = new AirlockType(2045,
-            Material.rock, "cFFieldAL").setHardness(0F)
+            Material.rock, "cFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
             .setUnlocalizedName("cFFieldAL").setCreativeTab(tab).setResistance(500F);
     public final static Block bFFieldAL = new AirlockType(2046,
-            Material.rock, "bFFieldAL").setHardness(0F)
+            Material.rock, "bFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
             .setUnlocalizedName("bFFieldAL").setCreativeTab(tab).setResistance(500F);
     public final static Block pFFieldAL = new AirlockType(2047,
-            Material.rock, "pFFieldAL").setHardness(0F)
+            Material.rock, "pFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
             .setUnlocalizedName("pFFieldAL").setCreativeTab(tab).setResistance(500F);
     public final static Block rTaint3 = new Tier3Taint(2048,
@@ -287,6 +288,7 @@ public class CliffiesTaints
         config.load();
         worldGenEnabled = config.get(Configuration.CATEGORY_GENERAL, "Generate Goo", true).getBoolean(true);
         expensiveAntiTaint = config.get(Configuration.CATEGORY_GENERAL, "Expensive anti-taint", false).getBoolean(false);
+        dangerousTaintCrafting = config.get(Configuration.CATEGORY_GENERAL, "Can the dangerous taints be made?", false).getBoolean(false);
         // saving the configuration to its file
         config.save();
     }
@@ -475,6 +477,8 @@ public class CliffiesTaints
                 "#$#", "###", '$', bTaint, '#', bTaint);
         GameRegistry.addRecipe(new ItemStack(pTaint1, 1), "###",
                 "#$#", "###", '$', pTaint, '#', pTaint);
+        if(dangerousTaintCrafting)
+        {
         GameRegistry.addRecipe(new ItemStack(rTaint2, 1), "###",
                 "#$#", "###", '$', rTaint, '#', rTaint1);
         GameRegistry.addRecipe(new ItemStack(oTaint2, 1), "###",
@@ -539,5 +543,6 @@ public class CliffiesTaints
                 "#$#", "###", '$', bTaint1, '#', bTaint2);
         GameRegistry.addRecipe(new ItemStack(pTaint3, 1), "###",
                 "#$#", "###", '$', pTaint1, '#', pTaint2);
+        }
     }
 }
