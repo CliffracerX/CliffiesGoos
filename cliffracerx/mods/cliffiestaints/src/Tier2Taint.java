@@ -77,7 +77,7 @@ public class Tier2Taint extends Block
                 for (int l = 0; l < 4; ++l)
                 {
                     int i1 = par2 + par5Random.nextInt(2) - 1;
-                    int j1 = par3 + par5Random.nextInt(2) - 1;
+                    int j1 = par3 + par5Random.nextInt(3) - 1;
                     int k1 = par4 + par5Random.nextInt(2) - 1;
 
                     //Spread through the air only.

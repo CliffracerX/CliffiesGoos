@@ -77,7 +77,7 @@ public class Tier3Taint extends Tier2Taint
                 for (int l = 0; l < 4; ++l)
                 {
                     int i1 = par2 + par5Random.nextInt(2) - 1;
-                    int j1 = par3 + par5Random.nextInt(2) - 1;
+                    int j1 = par3 + par5Random.nextInt(3) - 1;
                     int k1 = par4 + par5Random.nextInt(2) - 1;
 
                     //Spread onto all blocks that aren't bedrock, or force fields/airlocks.
