@@ -1,10 +1,12 @@
 package cliffracerx.mods.cliffiestaints.src;
 
 import net.minecraft.block.Block;
+import net.minecraftforge.common.EnumHelper;
 import net.minecraft.block.BlockFluid;
 import net.minecraft.block.BlockStationary;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.passive.EntityHorse;
+import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -42,9 +44,18 @@ public class CliffiesTaints
     public final static StepSound soundWooshFootstep = new StepSound("cliffiestaints:woosh", 1, 1);
     public final static StepSound soundZapFootstep = new StepSound("cliffiestaints:zap", 1, 1);
     public final static StepSound soundSplurgFootstep = new StepSound("cliffiestaints:splurg", 1, 1);
+    public static EnumArmorMaterial gasMask = EnumHelper.addArmorMaterial("cliffiesGasMask", (int)Double.POSITIVE_INFINITY, new int[]{2, 6, 5, 2}, 9);
     public boolean worldGenEnabled = false;
     public boolean expensiveAntiTaint = false;
     public boolean dangerousTaintCrafting = false;
+    public static int rMaskI;
+    public static int oMaskI;
+    public static int yMaskI;
+    public static int lMaskI;
+    public static int gMaskI;
+    public static int cMaskI;
+    public static int bMaskI;
+    public static int pMaskI;
     public final static Block rTaint = new NormalTaint(2000,
             Material.ground, "rTaint").setHardness(0.25F)
             .setStepSound(soundSplutFootstep)
@@ -176,67 +187,67 @@ public class CliffiesTaints
     public final static Block rFField = new AntiTaintTransp(2032,
             Material.rock, "rFField").setHardness(10F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("rFField").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("rFField").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block oFField = new AntiTaintTransp(2033,
             Material.rock, "oFField").setHardness(10F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("oFField").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("oFField").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block yFField = new AntiTaintTransp(2034,
             Material.rock, "yFField").setHardness(10F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("yFField").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("yFField").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block lFField = new AntiTaintTransp(2035,
             Material.rock, "lFField").setHardness(10F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("lFField").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("lFField").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block gFField = new AntiTaintTransp(2036,
             Material.rock, "gFField").setHardness(10F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("gFField").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("gFField").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block cFField = new AntiTaintTransp(2037,
             Material.rock, "cFField").setHardness(10F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("cFField").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("cFField").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block bFField = new AntiTaintTransp(2038,
             Material.rock, "bFField").setHardness(10F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("bFField").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("bFField").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block pFField = new AntiTaintTransp(2039,
             Material.rock, "pFField").setHardness(10F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("pFField").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("pFField").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block rFFieldAL = new AirlockType(2040,
             Material.rock, "rFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("rFFieldAL").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("rFFieldAL").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block oFFieldAL = new AirlockType(2041,
             Material.rock, "oFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("oFFieldAL").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("oFFieldAL").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block yFFieldAL = new AirlockType(2042,
             Material.rock, "yFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("yFFieldAL").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("yFFieldAL").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block lFFieldAL = new AirlockType(2043,
             Material.rock, "lFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("lFFieldAL").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("lFFieldAL").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block gFFieldAL = new AirlockType(2044,
             Material.rock, "gFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("gFFieldAL").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("gFFieldAL").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block cFFieldAL = new AirlockType(2045,
             Material.rock, "cFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("cFFieldAL").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("cFFieldAL").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block bFFieldAL = new AirlockType(2046,
             Material.rock, "bFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("bFFieldAL").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("bFFieldAL").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block pFFieldAL = new AirlockType(2047,
             Material.rock, "pFFieldAL").setHardness(0.25F)
             .setStepSound(soundZapFootstep)
-            .setUnlocalizedName("pFFieldAL").setCreativeTab(tab).setResistance(500F);
+            .setUnlocalizedName("pFFieldAL").setCreativeTab(tab).setLightValue(1.0F).setResistance(500F);
     public final static Block rTaint3 = new Tier3Taint(2048,
             Material.vine, "rTaint3").setHardness(0.1F)
             .setStepSound(soundSplurgFootstep)
@@ -269,7 +280,14 @@ public class CliffiesTaints
             Material.vine, "pTaint3").setHardness(0.1F)
             .setStepSound(soundSplurgFootstep)
             .setUnlocalizedName("pTaint3").setCreativeTab(tab);
-    
+    public final static Item rGasMask = new CustomArmor(8192, 0, "rMask", gasMask, rMaskI);
+    public final static Item oGasMask = new CustomArmor(8193, 0, "oMask", gasMask, oMaskI);
+    public final static Item yGasMask = new CustomArmor(8194, 0, "yMask", gasMask, yMaskI);
+    public final static Item lGasMask = new CustomArmor(8195, 0, "lMask", gasMask, lMaskI);
+    public final static Item gGasMask = new CustomArmor(8196, 0, "gMask", gasMask, gMaskI);
+    public final static Item cGasMask = new CustomArmor(8197, 0, "cMask", gasMask, cMaskI);
+    public final static Item bGasMask = new CustomArmor(8198, 0, "bMask", gasMask, bMaskI);
+    public final static Item pGasMask = new CustomArmor(8199, 0, "pMask", gasMask, pMaskI);
     
     @Instance("CliffiesTaints")
     public static CliffiesTaints instance;
@@ -298,6 +316,14 @@ public class CliffiesTaints
     public void load(FMLInitializationEvent event)
     {
         ClientProxy.registerRenderers();
+        rMaskI = ClientProxy.addArmour("rMask");
+        oMaskI = ClientProxy.addArmour("oMask");
+        yMaskI = ClientProxy.addArmour("yMask");
+        lMaskI = ClientProxy.addArmour("lMask");
+        gMaskI = ClientProxy.addArmour("gMask");
+        cMaskI = ClientProxy.addArmour("cMask");
+        bMaskI = ClientProxy.addArmour("bMask");
+        pMaskI = ClientProxy.addArmour("pMask");
     }
     
     @EventHandler
@@ -421,6 +447,15 @@ public class CliffiesTaints
         //Turn on the world gen if it's enabled.
         if(worldGenEnabled)
             GameRegistry.registerWorldGenerator(new GenerateGoo());
+        //Name items
+        LanguageRegistry.addName(rGasMask, "Red gas mask");
+        LanguageRegistry.addName(oGasMask, "Orange gas mask");
+        LanguageRegistry.addName(yGasMask, "Yellow gas mask");
+        LanguageRegistry.addName(lGasMask, "Lime gas mask");
+        LanguageRegistry.addName(gGasMask, "Green gas mask");
+        LanguageRegistry.addName(cGasMask, "Cyan gas mask");
+        LanguageRegistry.addName(bGasMask, "Blue gas mask");
+        LanguageRegistry.addName(pGasMask, "Purple gas mask");
         //Crafting
         if(expensiveAntiTaint)
         {
@@ -544,5 +579,21 @@ public class CliffiesTaints
         GameRegistry.addRecipe(new ItemStack(pTaint3, 1), "###",
                 "#$#", "###", '$', pTaint1, '#', pTaint2);
         }
+        GameRegistry.addRecipe(new ItemStack(rGasMask, 1), "###",
+                "#$#", "###", '$', rFFieldAL, '#', rATaint);
+        GameRegistry.addRecipe(new ItemStack(oGasMask, 1), "###",
+                "#$#", "###", '$', oFFieldAL, '#', oATaint);
+        GameRegistry.addRecipe(new ItemStack(yGasMask, 1), "###",
+                "#$#", "###", '$', yFFieldAL, '#', yATaint);
+        GameRegistry.addRecipe(new ItemStack(lGasMask, 1), "###",
+                "#$#", "###", '$', lFFieldAL, '#', lATaint);
+        GameRegistry.addRecipe(new ItemStack(gGasMask, 1), "###",
+                "#$#", "###", '$', gFFieldAL, '#', gATaint);
+        GameRegistry.addRecipe(new ItemStack(cGasMask, 1), "###",
+                "#$#", "###", '$', cFFieldAL, '#', cATaint);
+        GameRegistry.addRecipe(new ItemStack(bGasMask, 1), "###",
+                "#$#", "###", '$', bFFieldAL, '#', bATaint);
+        GameRegistry.addRecipe(new ItemStack(pGasMask, 1), "###",
+                "#$#", "###", '$', pFFieldAL, '#', pATaint);
     }
 }

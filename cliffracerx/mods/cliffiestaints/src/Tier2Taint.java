@@ -6,6 +6,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
@@ -75,9 +76,9 @@ public class Tier2Taint extends Block
             {
                 for (int l = 0; l < 4; ++l)
                 {
-                    int i1 = par2 + par5Random.nextInt(1) - 1;
-                    int j1 = par3 + par5Random.nextInt(1) - 1;
-                    int k1 = par4 + par5Random.nextInt(1) - 1;
+                    int i1 = par2 + par5Random.nextInt(2) - 1;
+                    int j1 = par3 + par5Random.nextInt(2) - 1;
+                    int k1 = par4 + par5Random.nextInt(2) - 1;
 
                     //Spread through the air only.
                     if (par1World.getBlockId(i1, j1, k1) == 0)
@@ -114,7 +115,14 @@ public class Tier2Taint extends Block
             par5Entity.motionZ*=0.5F;
             living.addPotionEffect(new PotionEffect(Potion.blindness.id, 60, 2, true));
             if(par1World.rand.nextInt(100)==0)
-            living.addPotionEffect(new PotionEffect(Potion.poison.id, 60, 0, true));
+            {
+                ItemStack helm = living.getCurrentItemOrArmor(4);
+                Item temp = null;
+                if(helm!=null)
+                    temp=helm.getItem();
+                if(!(temp instanceof CustomArmor))
+                    living.addPotionEffect(new PotionEffect(Potion.poison.id, 60, 0, true));
+            }
         }
     }
 }
