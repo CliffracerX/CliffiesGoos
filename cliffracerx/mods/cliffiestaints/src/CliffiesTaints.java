@@ -530,38 +530,6 @@ public class CliffiesTaints
                 "#$#", "###", '$', bTaint, '#', bTaint1);
         GameRegistry.addRecipe(new ItemStack(pTaint2, 1), "###",
                 "#$#", "###", '$', pTaint, '#', pTaint1);
-        GameRegistry.addRecipe(new ItemStack(rFField, 4), "###",
-                "#$#", "###", '$', rTaint2, '#', rATaint);
-        GameRegistry.addRecipe(new ItemStack(oFField, 4), "###",
-                "#$#", "###", '$', oTaint2, '#', oATaint);
-        GameRegistry.addRecipe(new ItemStack(yFField, 4), "###",
-                "#$#", "###", '$', yTaint2, '#', yATaint);
-        GameRegistry.addRecipe(new ItemStack(lFField, 4), "###",
-                "#$#", "###", '$', lTaint2, '#', lATaint);
-        GameRegistry.addRecipe(new ItemStack(gFField, 4), "###",
-                "#$#", "###", '$', gTaint2, '#', gATaint);
-        GameRegistry.addRecipe(new ItemStack(cFField, 4), "###",
-                "#$#", "###", '$', cTaint2, '#', cATaint);
-        GameRegistry.addRecipe(new ItemStack(bFField, 4), "###",
-                "#$#", "###", '$', bTaint2, '#', bATaint);
-        GameRegistry.addRecipe(new ItemStack(pFField, 4), "###",
-                "#$#", "###", '$', pTaint2, '#', pATaint);
-        GameRegistry.addRecipe(new ItemStack(rFFieldAL, 4), "###",
-                "#$#", "###", '$', rTaint2, '#', rFField);
-        GameRegistry.addRecipe(new ItemStack(oFFieldAL, 4), "###",
-                "#$#", "###", '$', oTaint2, '#', oFField);
-        GameRegistry.addRecipe(new ItemStack(yFFieldAL, 4), "###",
-                "#$#", "###", '$', yTaint2, '#', yFField);
-        GameRegistry.addRecipe(new ItemStack(lFFieldAL, 4), "###",
-                "#$#", "###", '$', lTaint2, '#', lFField);
-        GameRegistry.addRecipe(new ItemStack(gFFieldAL, 4), "###",
-                "#$#", "###", '$', gTaint2, '#', gFField);
-        GameRegistry.addRecipe(new ItemStack(cFFieldAL, 4), "###",
-                "#$#", "###", '$', cTaint2, '#', cFField);
-        GameRegistry.addRecipe(new ItemStack(bFFieldAL, 4), "###",
-                "#$#", "###", '$', bTaint2, '#', bFField);
-        GameRegistry.addRecipe(new ItemStack(pFFieldAL, 4), "###",
-                "#$#", "###", '$', pTaint2, '#', pFField);
         GameRegistry.addRecipe(new ItemStack(rTaint3, 1), "###",
                 "#$#", "###", '$', rTaint1, '#', rTaint2);
         GameRegistry.addRecipe(new ItemStack(oTaint3, 1), "###",
@@ -595,5 +563,37 @@ public class CliffiesTaints
                 "#$#", "###", '$', bFFieldAL, '#', bATaint);
         GameRegistry.addRecipe(new ItemStack(pGasMask, 1), "###",
                 "#$#", "###", '$', pFFieldAL, '#', pATaint);
+        GameRegistry.addRecipe(new ItemStack(rFField, 4), "###",
+                "#$#", "###", '$', rTaint2, '#', rATaint);
+        GameRegistry.addRecipe(new ItemStack(oFField, 4), "###",
+                "#$#", "###", '$', oTaint2, '#', oATaint);
+        GameRegistry.addRecipe(new ItemStack(yFField, 4), "###",
+                "#$#", "###", '$', yTaint2, '#', yATaint);
+        GameRegistry.addRecipe(new ItemStack(lFField, 4), "###",
+                "#$#", "###", '$', lTaint2, '#', lATaint);
+        GameRegistry.addRecipe(new ItemStack(gFField, 4), "###",
+                "#$#", "###", '$', gTaint2, '#', gATaint);
+        GameRegistry.addRecipe(new ItemStack(cFField, 4), "###",
+                "#$#", "###", '$', cTaint2, '#', cATaint);
+        GameRegistry.addRecipe(new ItemStack(bFField, 4), "###",
+                "#$#", "###", '$', bTaint2, '#', bATaint);
+        GameRegistry.addRecipe(new ItemStack(pFField, 4), "###",
+                "#$#", "###", '$', pTaint2, '#', pATaint);
+        GameRegistry.addRecipe(new ItemStack(rFFieldAL, 4), "###",
+                "#$#", "###", '$', rTaint2, '#', rFField);
+        GameRegistry.addRecipe(new ItemStack(oFFieldAL, 4), "###",
+                "#$#", "###", '$', oTaint2, '#', oFField);
+        GameRegistry.addRecipe(new ItemStack(yFFieldAL, 4), "###",
+                "#$#", "###", '$', yTaint2, '#', yFField);
+        GameRegistry.addRecipe(new ItemStack(lFFieldAL, 4), "###",
+                "#$#", "###", '$', lTaint2, '#', lFField);
+        GameRegistry.addRecipe(new ItemStack(gFFieldAL, 4), "###",
+                "#$#", "###", '$', gTaint2, '#', gFField);
+        GameRegistry.addRecipe(new ItemStack(cFFieldAL, 4), "###",
+                "#$#", "###", '$', cTaint2, '#', cFField);
+        GameRegistry.addRecipe(new ItemStack(bFFieldAL, 4), "###",
+                "#$#", "###", '$', bTaint2, '#', bFField);
+        GameRegistry.addRecipe(new ItemStack(pFFieldAL, 4), "###",
+                "#$#", "###", '$', pTaint2, '#', pFField);
     }
 }
