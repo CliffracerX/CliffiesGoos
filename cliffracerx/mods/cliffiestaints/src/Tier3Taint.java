@@ -76,9 +76,9 @@ public class Tier3Taint extends Tier2Taint
             {
                 for (int l = 0; l < 4; ++l)
                 {
-                    int i1 = par2 + par5Random.nextInt(2) - 1;
+                    int i1 = par2 + par5Random.nextInt(3) - 1;
                     int j1 = par3 + par5Random.nextInt(3) - 1;
-                    int k1 = par4 + par5Random.nextInt(2) - 1;
+                    int k1 = par4 + par5Random.nextInt(3) - 1;
 
                     //Spread onto all blocks that aren't bedrock, or force fields/airlocks.
                     if (par1World.getBlockId(i1, j1, k1) != Block.bedrock.blockID && !((Block.blocksList[par1World.getBlockId(i1, j1, k1)] instanceof AntiTaintTransp) || (Block.blocksList[par1World.getBlockId(i1, j1, k1)] instanceof AirlockType)))
