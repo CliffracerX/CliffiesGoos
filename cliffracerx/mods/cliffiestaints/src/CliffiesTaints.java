@@ -1,37 +1,34 @@
 package cliffracerx.mods.cliffiestaints.src;
 
+import tconstruct.common.TContent;
+import tconstruct.items.tools.Pickaxe;
+import tconstruct.library.TConstructRegistry;
+import tconstruct.library.client.TConstructClientRegistry;
+import tconstruct.library.crafting.ToolBuilder;
+import tconstruct.modifiers.tools.TActiveOmniMod;
 import net.minecraft.block.Block;
-import net.minecraftforge.common.EnumHelper;
-import net.minecraft.block.BlockFluid;
-import net.minecraft.block.BlockStationary;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.block.material.Material;
 import net.minecraftforge.common.Configuration;
-import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.Mod.PostInit;
-import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import cpw.mods.fml.common.event.FMLInterModComms;
 
 @Mod(modid = "CliffiesTaints", name = "Cliffie's Tainted Crap",
         version = "Alpha 0.01a")
@@ -280,6 +277,70 @@ public class CliffiesTaints
             Material.vine, "pTaint3").setHardness(0.1F)
             .setStepSound(soundSplurgFootstep)
             .setUnlocalizedName("pTaint3").setCreativeTab(tab);
+    public final static Block rSpeedGoo = new SpeedChangeGoo(2056,
+            Material.ground, "rSpeedGoo", 1.075f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("rSpeedGoo").setCreativeTab(tab);
+    public final static Block oSpeedGoo = new SpeedChangeGoo(2057,
+            Material.ground, "oSpeedGoo", 1.075f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("oSpeedGoo").setCreativeTab(tab);
+    public final static Block ySpeedGoo = new SpeedChangeGoo(2058,
+            Material.ground, "ySpeedGoo", 1.075f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("ySpeedGoo").setCreativeTab(tab);
+    public final static Block lSpeedGoo = new SpeedChangeGoo(2059,
+            Material.ground, "lSpeedGoo", 1.075f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("lSpeedGoo").setCreativeTab(tab);
+    public final static Block gSpeedGoo = new SpeedChangeGoo(2060,
+            Material.ground, "gSpeedGoo", 1.075f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("gSpeedGoo").setCreativeTab(tab);
+    public final static Block cSpeedGoo = new SpeedChangeGoo(2061,
+            Material.ground, "cSpeedGoo", 1.075f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("cSpeedGoo").setCreativeTab(tab);
+    public final static Block bSpeedGoo = new SpeedChangeGoo(2062,
+            Material.ground, "bSpeedGoo", 1.075f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("bSpeedGoo").setCreativeTab(tab);
+    public final static Block pSpeedGoo = new SpeedChangeGoo(2063,
+            Material.ground, "pSpeedGoo", 1.075f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("pSpeedGoo").setCreativeTab(tab);
+    public final static Block rSlowGoo = new SpeedChangeGoo(2064,
+            Material.ground, "rSlowGoo", 0.88f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("rSlowGoo").setCreativeTab(tab);
+    public final static Block oSlowGoo = new SpeedChangeGoo(2065,
+            Material.ground, "oSlowGoo", 0.88f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("oSlowGoo").setCreativeTab(tab);
+    public final static Block ySlowGoo = new SpeedChangeGoo(2066,
+            Material.ground, "ySlowGoo", 0.88f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("ySlowGoo").setCreativeTab(tab);
+    public final static Block lSlowGoo = new SpeedChangeGoo(2067,
+            Material.ground, "lSlowGoo", 0.88f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("lSlowGoo").setCreativeTab(tab);
+    public final static Block gSlowGoo = new SpeedChangeGoo(2068,
+            Material.ground, "gSlowGoo", 0.88f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("gSlowGoo").setCreativeTab(tab);
+    public final static Block cSlowGoo = new SpeedChangeGoo(2069,
+            Material.ground, "cSlowGoo", 0.88f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("cSlowGoo").setCreativeTab(tab);
+    public final static Block bSlowGoo = new SpeedChangeGoo(2070,
+            Material.ground, "bSlowGoo", 0.88f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("bSlowGoo").setCreativeTab(tab);
+    public final static Block pSlowGoo = new SpeedChangeGoo(2071,
+            Material.ground, "pSlowGoo", 0.88f).setHardness(0.75F)
+            .setStepSound(soundSplutFootstep)
+            .setUnlocalizedName("pSlowGoo").setCreativeTab(tab);
     public final static Item rGasMask = new CustomArmor(8192, 0, "rMask", gasMask, rMaskI);
     public final static Item oGasMask = new CustomArmor(8193, 0, "oMask", gasMask, oMaskI);
     public final static Item yGasMask = new CustomArmor(8194, 0, "yMask", gasMask, yMaskI);
@@ -324,6 +385,89 @@ public class CliffiesTaints
         cMaskI = ClientProxy.addArmour("cMask");
         bMaskI = ClientProxy.addArmour("bMask");
         pMaskI = ClientProxy.addArmour("pMask");
+        if(Loader.isModLoaded("TConstruct"))
+        {
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1024, "cliffiestaints", "rFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1025, "cliffiestaints", "oFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1026, "cliffiestaints", "yFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1027, "cliffiestaints", "lFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1028, "cliffiestaints", "gFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1029, "cliffiestaints", "cFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1030, "cliffiestaints", "bFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1031, "cliffiestaints", "pFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1032, "cliffiestaints", "rATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1033, "cliffiestaints", "oATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1034, "cliffiestaints", "yATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1035, "cliffiestaints", "lATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1036, "cliffiestaints", "gATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1037, "cliffiestaints", "cATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1038, "cliffiestaints", "bATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1039, "cliffiestaints", "pATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1024, "cliffiestaints", "rFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1025, "cliffiestaints", "oFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1026, "cliffiestaints", "yFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1027, "cliffiestaints", "lFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1028, "cliffiestaints", "gFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1029, "cliffiestaints", "cFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1030, "cliffiestaints", "bFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1031, "cliffiestaints", "pFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1032, "cliffiestaints", "rATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1033, "cliffiestaints", "oATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1034, "cliffiestaints", "yATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1035, "cliffiestaints", "lATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1036, "cliffiestaints", "gATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1037, "cliffiestaints", "cATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1038, "cliffiestaints", "bATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1039, "cliffiestaints", "pATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1024, "cliffiestaints", "rFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1025, "cliffiestaints", "oFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1026, "cliffiestaints", "yFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1027, "cliffiestaints", "lFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1028, "cliffiestaints", "gFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1029, "cliffiestaints", "cFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1030, "cliffiestaints", "bFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1031, "cliffiestaints", "pFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1032, "cliffiestaints", "rATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1033, "cliffiestaints", "oATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1034, "cliffiestaints", "yATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1035, "cliffiestaints", "lATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1036, "cliffiestaints", "gATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1037, "cliffiestaints", "cATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1038, "cliffiestaints", "bATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1039, "cliffiestaints", "pATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1024, "cliffiestaints", "rFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1025, "cliffiestaints", "oFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1026, "cliffiestaints", "yFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1027, "cliffiestaints", "lFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1028, "cliffiestaints", "gFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1029, "cliffiestaints", "cFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1030, "cliffiestaints", "bFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1031, "cliffiestaints", "pFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1032, "cliffiestaints", "rATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1033, "cliffiestaints", "oATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1034, "cliffiestaints", "yATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1035, "cliffiestaints", "lATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1036, "cliffiestaints", "gATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1037, "cliffiestaints", "cATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1038, "cliffiestaints", "bATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1039, "cliffiestaints", "pATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1024, "cliffiestaints", "rFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1025, "cliffiestaints", "oFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1026, "cliffiestaints", "yFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1027, "cliffiestaints", "lFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1028, "cliffiestaints", "gFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1029, "cliffiestaints", "cFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1030, "cliffiestaints", "bFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1031, "cliffiestaints", "pFField", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1032, "cliffiestaints", "rATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1033, "cliffiestaints", "oATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1034, "cliffiestaints", "yATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1035, "cliffiestaints", "lATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1036, "cliffiestaints", "gATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1037, "cliffiestaints", "cATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1038, "cliffiestaints", "bATaint", true);
+        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1039, "cliffiestaints", "pATaint", true);
+        }
     }
     
     @EventHandler
@@ -442,6 +586,38 @@ public class CliffiesTaints
         GameRegistry.registerBlock(bTaint3, "bTaint3");
         LanguageRegistry.addName(pTaint3, "Purple Tainted goo (lv 3)");
         GameRegistry.registerBlock(pTaint3, "pTaint3");
+        LanguageRegistry.addName(rSpeedGoo, "Red Speed goo");
+        GameRegistry.registerBlock(rSpeedGoo, "rSpeedGoo");
+        LanguageRegistry.addName(oSpeedGoo, "Orange Speed goo");
+        GameRegistry.registerBlock(oSpeedGoo, "oSpeedGoo");
+        LanguageRegistry.addName(ySpeedGoo, "Yellow Speed goo");
+        GameRegistry.registerBlock(ySpeedGoo, "ySpeedGoo");
+        LanguageRegistry.addName(lSpeedGoo, "Lime Speed goo");
+        GameRegistry.registerBlock(lSpeedGoo, "lSpeedGoo");
+        LanguageRegistry.addName(gSpeedGoo, "Green Speed goo");
+        GameRegistry.registerBlock(gSpeedGoo, "gSpeedGoo");
+        LanguageRegistry.addName(cSpeedGoo, "Cyan Speed goo");
+        GameRegistry.registerBlock(cSpeedGoo, "cSpeedGoo");
+        LanguageRegistry.addName(bSpeedGoo, "Blue Speed goo");
+        GameRegistry.registerBlock(bSpeedGoo, "bSpeedGoo");
+        LanguageRegistry.addName(pSpeedGoo, "Purple Speed goo");
+        GameRegistry.registerBlock(pSpeedGoo, "pSpeedGoo");
+        LanguageRegistry.addName(rSlowGoo, "Red Slow goo");
+        GameRegistry.registerBlock(rSlowGoo, "rSlowGoo");
+        LanguageRegistry.addName(oSlowGoo, "Orange Slow goo");
+        GameRegistry.registerBlock(oSlowGoo, "oSlowGoo");
+        LanguageRegistry.addName(ySlowGoo, "Yellow Slow goo");
+        GameRegistry.registerBlock(ySlowGoo, "ySlowGoo");
+        LanguageRegistry.addName(lSlowGoo, "Lime Slow goo");
+        GameRegistry.registerBlock(lSlowGoo, "lSlowGoo");
+        LanguageRegistry.addName(gSlowGoo, "Green Slow goo");
+        GameRegistry.registerBlock(gSlowGoo, "gSlowGoo");
+        LanguageRegistry.addName(cSlowGoo, "Cyan Slow goo");
+        GameRegistry.registerBlock(cSlowGoo, "cSlowGoo");
+        LanguageRegistry.addName(bSlowGoo, "Blue Slow goo");
+        GameRegistry.registerBlock(bSlowGoo, "bSlowGoo");
+        LanguageRegistry.addName(pSlowGoo, "Purple Slow goo");
+        GameRegistry.registerBlock(pSlowGoo, "pSlowGoo");
         //Event handler
         MinecraftForge.EVENT_BUS.register(new TaintsEventHandler());
         //Turn on the world gen if it's enabled.
@@ -456,6 +632,28 @@ public class CliffiesTaints
         LanguageRegistry.addName(cGasMask, "Cyan gas mask");
         LanguageRegistry.addName(bGasMask, "Blue gas mask");
         LanguageRegistry.addName(pGasMask, "Purple gas mask");
+        //Add tinkers loot
+        if(Loader.isModLoaded("TConstruct"))
+        {
+        ToolBuilder tb = ToolBuilder.instance;
+        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(rFField) }, 1024, "rFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
+        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(oFField) }, 1025, "oFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
+        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(yFField) }, 1026, "yFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
+        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(lFField) }, 1027, "lFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
+        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(gFField) }, 1028, "gFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
+        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(cFField) }, 1029, "cFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
+        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(bFField) }, 1030, "bFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
+        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(pFField) }, 1031, "pFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
+        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(rATaint) }, 1032, "rATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
+        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(oATaint) }, 1033, "oATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
+        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(yATaint) }, 1034, "yATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
+        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(lATaint) }, 1035, "lATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
+        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(gATaint) }, 1036, "gATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
+        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(cATaint) }, 1037, "cATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
+        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(bATaint) }, 1038, "bATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
+        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(pATaint) }, 1039, "pATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
+        TConstructRegistry.registerActiveToolMod(new TaintsActive());
+        }
         //Crafting
         if(expensiveAntiTaint)
         {
@@ -595,5 +793,37 @@ public class CliffiesTaints
                 "#$#", "###", '$', bTaint2, '#', bFField);
         GameRegistry.addRecipe(new ItemStack(pFFieldAL, 4), "###",
                 "#$#", "###", '$', pTaint2, '#', pFField);
+        GameRegistry.addRecipe(new ItemStack(rSpeedGoo, 16), "###",
+                "#$#", "###", '$', rTaint2, '#', rTaint);
+        GameRegistry.addRecipe(new ItemStack(oSpeedGoo, 16), "###",
+                "#$#", "###", '$', oTaint2, '#', oTaint);
+        GameRegistry.addRecipe(new ItemStack(ySpeedGoo, 16), "###",
+                "#$#", "###", '$', yTaint2, '#', yTaint);
+        GameRegistry.addRecipe(new ItemStack(lSpeedGoo, 16), "###",
+                "#$#", "###", '$', lTaint2, '#', lTaint);
+        GameRegistry.addRecipe(new ItemStack(gSpeedGoo, 16), "###",
+                "#$#", "###", '$', gTaint2, '#', gTaint);
+        GameRegistry.addRecipe(new ItemStack(cSpeedGoo, 16), "###",
+                "#$#", "###", '$', cTaint2, '#', cTaint);
+        GameRegistry.addRecipe(new ItemStack(bSpeedGoo, 16), "###",
+                "#$#", "###", '$', bTaint2, '#', bTaint);
+        GameRegistry.addRecipe(new ItemStack(pSpeedGoo, 16), "###",
+                "#$#", "###", '$', pTaint2, '#', pTaint);
+        GameRegistry.addRecipe(new ItemStack(rSlowGoo, 16), "###",
+                "#$#", "###", '$', rTaint1, '#', rTaint);
+        GameRegistry.addRecipe(new ItemStack(oSlowGoo, 16), "###",
+                "#$#", "###", '$', oTaint1, '#', oTaint);
+        GameRegistry.addRecipe(new ItemStack(ySlowGoo, 16), "###",
+                "#$#", "###", '$', yTaint1, '#', yTaint);
+        GameRegistry.addRecipe(new ItemStack(lSlowGoo, 16), "###",
+                "#$#", "###", '$', lTaint1, '#', lTaint);
+        GameRegistry.addRecipe(new ItemStack(gSlowGoo, 16), "###",
+                "#$#", "###", '$', gTaint1, '#', gTaint);
+        GameRegistry.addRecipe(new ItemStack(cSlowGoo, 16), "###",
+                "#$#", "###", '$', cTaint1, '#', cTaint);
+        GameRegistry.addRecipe(new ItemStack(bSlowGoo, 16), "###",
+                "#$#", "###", '$', bTaint1, '#', bTaint);
+        GameRegistry.addRecipe(new ItemStack(pSlowGoo, 16), "###",
+                "#$#", "###", '$', pTaint1, '#', pTaint);
     }
 }
