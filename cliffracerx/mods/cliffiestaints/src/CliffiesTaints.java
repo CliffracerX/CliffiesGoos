@@ -1,11 +1,5 @@
 package cliffracerx.mods.cliffiestaints.src;
 
-import tconstruct.common.TContent;
-import tconstruct.items.tools.Pickaxe;
-import tconstruct.library.TConstructRegistry;
-import tconstruct.library.client.TConstructClientRegistry;
-import tconstruct.library.crafting.ToolBuilder;
-import tconstruct.modifiers.tools.TActiveOmniMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -31,7 +25,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @Mod(modid = "CliffiesTaints", name = "Cliffie's Tainted Crap",
-        version = "Alpha 0.01a")
+        version = "Alpha 0.09a")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class CliffiesTaints
 {
@@ -385,89 +379,6 @@ public class CliffiesTaints
         cMaskI = ClientProxy.addArmour("cMask");
         bMaskI = ClientProxy.addArmour("bMask");
         pMaskI = ClientProxy.addArmour("pMask");
-        if(Loader.isModLoaded("TConstruct"))
-        {
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1024, "cliffiestaints", "rFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1025, "cliffiestaints", "oFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1026, "cliffiestaints", "yFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1027, "cliffiestaints", "lFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1028, "cliffiestaints", "gFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1029, "cliffiestaints", "cFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1030, "cliffiestaints", "bFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1031, "cliffiestaints", "pFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1032, "cliffiestaints", "rATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1033, "cliffiestaints", "oATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1034, "cliffiestaints", "yATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1035, "cliffiestaints", "lATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1036, "cliffiestaints", "gATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1037, "cliffiestaints", "cATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1038, "cliffiestaints", "bATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.pickaxe, 1039, "cliffiestaints", "pATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1024, "cliffiestaints", "rFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1025, "cliffiestaints", "oFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1026, "cliffiestaints", "yFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1027, "cliffiestaints", "lFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1028, "cliffiestaints", "gFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1029, "cliffiestaints", "cFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1030, "cliffiestaints", "bFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1031, "cliffiestaints", "pFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1032, "cliffiestaints", "rATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1033, "cliffiestaints", "oATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1034, "cliffiestaints", "yATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1035, "cliffiestaints", "lATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1036, "cliffiestaints", "gATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1037, "cliffiestaints", "cATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1038, "cliffiestaints", "bATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.longsword, 1039, "cliffiestaints", "pATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1024, "cliffiestaints", "rFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1025, "cliffiestaints", "oFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1026, "cliffiestaints", "yFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1027, "cliffiestaints", "lFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1028, "cliffiestaints", "gFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1029, "cliffiestaints", "cFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1030, "cliffiestaints", "bFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1031, "cliffiestaints", "pFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1032, "cliffiestaints", "rATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1033, "cliffiestaints", "oATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1034, "cliffiestaints", "yATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1035, "cliffiestaints", "lATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1036, "cliffiestaints", "gATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1037, "cliffiestaints", "cATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1038, "cliffiestaints", "bATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.shovel, 1039, "cliffiestaints", "pATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1024, "cliffiestaints", "rFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1025, "cliffiestaints", "oFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1026, "cliffiestaints", "yFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1027, "cliffiestaints", "lFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1028, "cliffiestaints", "gFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1029, "cliffiestaints", "cFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1030, "cliffiestaints", "bFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1031, "cliffiestaints", "pFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1032, "cliffiestaints", "rATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1033, "cliffiestaints", "oATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1034, "cliffiestaints", "yATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1035, "cliffiestaints", "lATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1036, "cliffiestaints", "gATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1037, "cliffiestaints", "cATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1038, "cliffiestaints", "bATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.broadsword, 1039, "cliffiestaints", "pATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1024, "cliffiestaints", "rFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1025, "cliffiestaints", "oFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1026, "cliffiestaints", "yFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1027, "cliffiestaints", "lFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1028, "cliffiestaints", "gFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1029, "cliffiestaints", "cFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1030, "cliffiestaints", "bFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1031, "cliffiestaints", "pFField", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1032, "cliffiestaints", "rATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1033, "cliffiestaints", "oATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1034, "cliffiestaints", "yATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1035, "cliffiestaints", "lATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1036, "cliffiestaints", "gATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1037, "cliffiestaints", "cATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1038, "cliffiestaints", "bATaint", true);
-        TConstructClientRegistry.addEffectRenderMapping(TContent.hatchet, 1039, "cliffiestaints", "pATaint", true);
-        }
     }
     
     @EventHandler
@@ -632,28 +543,6 @@ public class CliffiesTaints
         LanguageRegistry.addName(cGasMask, "Cyan gas mask");
         LanguageRegistry.addName(bGasMask, "Blue gas mask");
         LanguageRegistry.addName(pGasMask, "Purple gas mask");
-        //Add tinkers loot
-        if(Loader.isModLoaded("TConstruct"))
-        {
-        ToolBuilder tb = ToolBuilder.instance;
-        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(rFField) }, 1024, "rFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
-        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(oFField) }, 1025, "oFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
-        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(yFField) }, 1026, "yFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
-        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(lFField) }, 1027, "lFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
-        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(gFField) }, 1028, "gFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
-        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(cFField) }, 1029, "cFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
-        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(bFField) }, 1030, "bFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
-        tb.registerToolMod(new ModFField(new ItemStack[] { new ItemStack(pFField) }, 1031, "pFField", "\u00a72Durability 10x, attack 2x, mining speed 4x, mining level +2", "\u00a72"));
-        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(rATaint) }, 1032, "rATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
-        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(oATaint) }, 1033, "oATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
-        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(yATaint) }, 1034, "yATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
-        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(lATaint) }, 1035, "lATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
-        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(gATaint) }, 1036, "gATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
-        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(cATaint) }, 1037, "cATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
-        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(bATaint) }, 1038, "bATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
-        tb.registerToolMod(new ModATaint(new ItemStack[] { new ItemStack(pATaint) }, 1039, "pATaint", "\u00a72Durability 3x and autorepairs, attack 3x, mining speed 2x, mining level +1", "\u00a72"));
-        TConstructRegistry.registerActiveToolMod(new TaintsActive());
-        }
         //Crafting
         if(expensiveAntiTaint)
         {

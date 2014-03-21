@@ -22,11 +22,9 @@ Anti taint walls: Derpy sounding walls to keep out tier 0/1 taint.
 Anti taint wall: Keeps out goos.
 
 Compiling: Stick the cliffracerx and assets folder into your mcp/src/minecraft/ and you should be good.  For MC 1.6.4, GRADLE NOT SUPPORTED.
-You will also need to add the latest 1.6.4 tinkers into your buildpath or lib folder to get it to compile.  I think I can keep this unfortunate situation temporary, so keep your eyes peeled!
 
 Credits:
 
 * Me for the derpy sound effects
 * Me for the textures
 * Mojang for the basic idea for the spreading code and such
-* mDiyo and others for making Tinkers Construct
