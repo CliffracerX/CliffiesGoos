@@ -1,5 +1,7 @@
 package cliffracerx.mods.cliffiestaints.src;
 
+import java.util.ArrayList;
+import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -343,6 +345,7 @@ public class CliffiesTaints
     public final static Item cGasMask = new CustomArmor(8197, 0, "cMask", gasMask, cMaskI);
     public final static Item bGasMask = new CustomArmor(8198, 0, "bMask", gasMask, bMaskI);
     public final static Item pGasMask = new CustomArmor(8199, 0, "pMask", gasMask, pMaskI);
+    static List blacklistedDims = new ArrayList();
     
     @Instance("CliffiesTaints")
     public static CliffiesTaints instance;
@@ -362,6 +365,11 @@ public class CliffiesTaints
         worldGenEnabled = config.get(Configuration.CATEGORY_GENERAL, "Generate Goo", true).getBoolean(true);
         expensiveAntiTaint = config.get(Configuration.CATEGORY_GENERAL, "Expensive anti-taint", false).getBoolean(false);
         dangerousTaintCrafting = config.get(Configuration.CATEGORY_GENERAL, "Can the dangerous taints be made?", false).getBoolean(false);
+        int blacklistedDimList = config.get(Configuration.CATEGORY_GENERAL, "How many blacklisted dimensions are there?", 0).getInt(0);
+        for(int i = 0; i<blacklistedDimList; i++)
+        {
+            blacklistedDims.add(config.get(Configuration.CATEGORY_GENERAL, "Blacklisted dim #"+i, 0).getInt(0));
+        }
         // saving the configuration to its file
         config.save();
     }
