@@ -37,7 +37,7 @@ public class CliffiesTaints
     public final static StepSound soundWooshFootstep = new StepSound("cliffiestaints:woosh", 1, 1);
     public final static StepSound soundZapFootstep = new StepSound("cliffiestaints:zap", 1, 1);
     public final static StepSound soundSplurgFootstep = new StepSound("cliffiestaints:splurg", 1, 1);
-    public static EnumArmorMaterial gasMask = EnumHelper.addArmorMaterial("cliffiesGasMask", (int)Double.POSITIVE_INFINITY, new int[]{2, 6, 5, 2}, 9);
+    public static EnumArmorMaterial gasMask = EnumHelper.addArmorMaterial("cliffiesGasMask", 500, new int[]{2, 6, 5, 2}, 9);
     public boolean worldGenEnabled = false;
     public boolean expensiveAntiTaint = false;
     public boolean dangerousTaintCrafting = false;
