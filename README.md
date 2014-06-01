@@ -28,3 +28,5 @@ Credits:
 * Me for the derpy sound effects
 * Me for the textures
 * Mojang for the basic idea for the spreading code and such
+
+1.7 version available at https://github.com/minecreatr/CliffiesGoos1.7/
